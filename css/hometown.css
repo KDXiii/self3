@@ -58,7 +58,6 @@ body {
   background: #4bbce9;
 }
 
-/* ---------- 卡片墙 ---------- */
 .card-grid {
   max-width: 960px;
   margin: 0 auto;
@@ -74,6 +73,14 @@ body {
   padding: 16px;
 }
 
+.hometown-card img {
+  width: 100%;
+  height: 200px;       
+  object-fit: cover;   
+  display: block;
+  margin-bottom: 8px;
+}
+
 .hometown-card h3 {
   margin: 0 0 6px;
   color: #020f14;
@@ -83,8 +90,8 @@ body {
   color: #1c7fb8;
 }
 
-/* ---------- 关于个旧区块 ---------- */
-.about-box {
+.about-box,
+.guide-box {
   max-width: 960px;
   margin: 0 auto;
   padding: 16px;
@@ -92,14 +99,39 @@ body {
   border: 2px solid #76cdf0;
 }
 
-.about-box p {
+.about-box p,
+.guide-box p {
   margin: 0 0 10px;
   line-height: 1.8;
 }
 
-.about-box p:last-child { margin-bottom: 0; }
+.about-box p:last-child,
+.guide-box p:last-child { margin-bottom: 0; }
 
-/* ---------- 页脚 ---------- */
+.link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link-list li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #bfe4f5;
+}
+
+.link-list li:last-child {
+  border-bottom: none;
+}
+
+.link-list a {
+  color: #1c7fb8;
+  font-weight: 600;
+}
+
+.link-list a:hover {
+  color: #0c536e;
+}
+
 .site-footer {
   background: #7bc1e6;
   border-top: 2px solid #0e1d21;
@@ -113,5 +145,5 @@ body {
 
 @media (min-width: 992px) {
   .hometown-card { padding: 24px; }
-  .about-box { padding: 24px; }
+  .about-box, .guide-box { padding: 24px; }
 }
