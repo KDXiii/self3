@@ -1,15 +1,61 @@
 * { box-sizing: border-box; }
 
+:root {
+  color-scheme: light dark;
+
+  --bg-page: #f2f9fd;
+  --text-main: #333;
+
+  --bg-header: #7bc1e6;
+  --border-header: #0e1d21;
+  --color-logo: #01000e;
+
+  --bg-accent-bar: #4bbce9;
+
+  --bg-card: #fcfcfc;
+  --border-card: #76cdf0;
+  --color-card-title: #020f14;
+
+  --color-link: #1c7fb8;
+  --color-link-hover: #0c536e;
+
+  --border-dashed: #bfe4f5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-page: #0d1b26;
+    --text-main: #c8d8e4;
+
+    --bg-header: #1a3340;
+    --border-header: #2a4a5a;
+    --color-logo: #a0d4e8;
+
+    --bg-accent-bar: #3a8ab0;
+
+    --bg-card: #16242f;
+    --border-card: #2a5a70;
+    --color-card-title: #b0d4e8;
+
+    --color-link: #5bbce0;
+    --color-link-hover: #8fd4f0;
+
+    --border-dashed: #1f3a4a;
+  }
+}
+
 body {
   font-family: "Microsoft YaHei", sans-serif;
   margin: 0;
-  color: #333;
-  background: #f2f9fd; 
+  color: var(--text-main);
+  background: var(--bg-page);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .site-header {
-  background: #7bc1e6;            
-  border-bottom: 2px solid #0e1d21;
+  background: var(--bg-header);
+  border-bottom: 2px solid var(--border-header);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-wrap {
@@ -25,7 +71,7 @@ body {
 
 .logo {
   font-weight: 700;
-  color: #01000e;
+  color: var(--color-logo);
   font-size: clamp(1rem, 0.5vw + 0.75rem, 1.375rem);
 }
 
@@ -36,12 +82,12 @@ body {
 
 .main-nav a {
   text-decoration: none;
-  color: #1c7fb8;             
+  color: var(--color-link);
   font-weight: 600;
 }
 
 .main-nav a:hover {
-  color: #0c536e;
+  color: var(--color-link-hover);
 }
 
 .section h2 {
@@ -57,7 +103,7 @@ body {
   height: 3px;
   margin: 8px auto 0;
   border-radius: 2px;
-  background: #4bbce9;
+  background: var(--bg-accent-bar);
 }
 
 .card-grid {
@@ -70,9 +116,10 @@ body {
 }
 
 .hometown-card {
-  background: #fcfcfc;           
-  border: 2px solid #76cdf0;      
+  background: var(--bg-card);
+  border: 2px solid var(--border-card);
   padding: 16px;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .hometown-card img {
@@ -85,13 +132,12 @@ body {
 
 .hometown-card h3 {
   margin: 0 0 6px;
-  color: #020f14;
-  /* clamp() 流式卡片标题：16px ~ 20px，400px~1200px 视口间线性变化 */
+  color: var(--color-card-title);
   font-size: clamp(1rem, 0.5vw + 0.875rem, 1.25rem);
 }
 
 .hometown-card a {
-  color: #1c7fb8;
+  color: var(--color-link);
 }
 
 .about-box,
@@ -99,8 +145,9 @@ body {
   max-width: 960px;
   margin: 0 auto;
   padding: 16px;
-  background: #fcfcfc;
-  border: 2px solid #76cdf0;
+  background: var(--bg-card);
+  border: 2px solid var(--border-card);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .about-box p,
@@ -120,7 +167,7 @@ body {
 
 .link-list li {
   padding: 8px 0;
-  border-bottom: 1px dashed #bfe4f5;
+  border-bottom: 1px dashed var(--border-dashed);
 }
 
 .link-list li:last-child {
@@ -128,21 +175,22 @@ body {
 }
 
 .link-list a {
-  color: #1c7fb8;
+  color: var(--color-link);
   font-weight: 600;
 }
 
 .link-list a:hover {
-  color: #0c536e;
+  color: var(--color-link-hover);
 }
 
 .site-footer {
-  background: #7bc1e6;
-  border-top: 2px solid #0e1d21;
+  background: var(--bg-header);
+  border-top: 2px solid var(--border-header);
   text-align: center;
   padding: 14px 16px;
   font-size: 0.9rem;
-  color: #01000e;
+  color: var(--color-logo);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .site-footer p { margin: 0; }
